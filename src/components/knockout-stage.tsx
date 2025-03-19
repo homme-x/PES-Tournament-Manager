@@ -61,8 +61,8 @@ export function KnockoutStage({ matches, onScoreSubmit }: KnockoutStageProps) {
                         {/* Match Retour */}
                         {roundMatches[round]?.find(m => 
                           m.leg === 'second' && 
-                          m.homePlayer?.id === match.awayPlayer.id && 
-                          m.awayPlayer?.id === match.homePlayer.id
+                          m.homePlayer?.id === match.awayPlayer?.id && 
+                          m.awayPlayer?.id === match.homePlayer?.id
                         ) && (
                           <div className="mt-4 pt-4 border-t border-border">
                             <div className="text-sm font-medium text-muted-foreground mb-2">Match Retour</div>
@@ -75,7 +75,7 @@ export function KnockoutStage({ matches, onScoreSubmit }: KnockoutStageProps) {
                                 onChange={(e) => {
                                   const returnMatch = roundMatches[round]?.find(m => 
                                     m.leg === 'second' && 
-                                    m.homePlayer?.id === match.awayPlayer.id
+                                    m.homePlayer?.id === match.awayPlayer?.id
                                   );
                                   if (returnMatch) {
                                     onScoreSubmit(returnMatch, Number(e.target.value), match.awayScore ?? 0);
@@ -93,7 +93,7 @@ export function KnockoutStage({ matches, onScoreSubmit }: KnockoutStageProps) {
                                 onChange={(e) => {
                                   const returnMatch = roundMatches[round]?.find(m => 
                                     m.leg === 'second' && 
-                                    m.homePlayer?.id === match.awayPlayer.id
+                                    m.homePlayer?.id === match.awayPlayer?.id
                                   );
                                   if (returnMatch) {
                                     onScoreSubmit(returnMatch, returnMatch.homeScore ?? 0, Number(e.target.value));
